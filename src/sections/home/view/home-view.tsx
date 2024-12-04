@@ -1,8 +1,8 @@
 import HeroSection from "../hero-section";
 import HomeProjects from "../home-projects";
-// import HomeContact from "../home-contact";
+import HomeContact from "../home-contact";
 // import HomeEducation from "../home-education";
-// import HomeTimeline from "../home-timeline";
+import HomeTimeline from "../home-timeline";
 
 const HomeView = () => {
   return (
@@ -10,9 +10,9 @@ const HomeView = () => {
       <main className="max-w-2xl mx-auto">
         <HeroSection />
         <HomeProjects />
-        {/* <HomeEducation />
+        {/* <HomeEducation /> */}
         <HomeTimeline />
-        <HomeContact /> */}
+        <HomeContact />
       </main>
     </>
   );
