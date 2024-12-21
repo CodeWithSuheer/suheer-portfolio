@@ -8,12 +8,14 @@ import { GridPattern } from "./GridPattern";
 
 interface CardHoverEffectProps {
   title: string;
+  url: string;
   description: string;
-  icon: React.ReactNode; // Allow any React element as an icon
+  icon: React.ReactNode;
 }
 
 export const CardHoverEffect: React.FC<CardHoverEffectProps> = ({
   title,
+  url,
   description,
   icon,
 }) => {
@@ -39,7 +41,8 @@ export const CardHoverEffect: React.FC<CardHoverEffectProps> = ({
   return (
     <div
       onMouseMove={onMouseMove}
-      className="group rounded-2xl bg-white dark:bg-zinc-800 border border-gray-200 dark:border-zinc-700 p-8 relative max-w-sm"
+      onClick={() => window.open(url, "_blank")}
+      className="group rounded-2xl bg-white dark:bg-zinc-800 border border-gray-200 dark:border-zinc-700 p-8 relative max-w-sm cursor-pointer"
     >
       <Effect {...pattern} mouseX={mouseX} mouseY={mouseY} />
       <div className="relative z-10">
