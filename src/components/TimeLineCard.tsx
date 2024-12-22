@@ -11,7 +11,6 @@ interface HackathonCardProps {
   title: string;
   description: string;
   dates: string;
-  location: string;
   image?: string;
   links?: readonly LinkProps[];
 }
@@ -53,7 +52,6 @@ export const TimeLineCard: React.FC<HackathonCardProps> = ({
   title,
   description,
   dates,
-  location,
   image,
   links,
 }) => {
@@ -65,14 +63,13 @@ export const TimeLineCard: React.FC<HackathonCardProps> = ({
       <div className="flex flex-1 flex-col justify-start gap-1">
         {dates && <time className="text-xs text-gray-500">{dates}</time>}
         <h2 className="font-semibold leading-none">{title}</h2>
-        {location && <p className="text-sm text-gray-500">{location}</p>}
         {description && (
-          <span className="text-sm text-gray-500">{description}</span>
+          <span className="mt-0.5 text-sm text-gray-500">{description}</span>
         )}
       </div>
       {links && links.length > 0 && (
         <div className="mt-2 flex flex-row flex-wrap items-start gap-2">
-          {links.map((link, idx) => (
+          {links?.map((link, idx) => (
             <Link to={link.href} key={idx}>
               <Badge title={link.title} className="flex gap-2">
                 {link.icon}

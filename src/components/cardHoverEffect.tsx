@@ -15,7 +15,7 @@ interface CardHoverEffectProps {
 
 export const CardHoverEffect: React.FC<CardHoverEffectProps> = ({
   title,
-  url,
+  // url,
   description,
   icon,
 }) => {
@@ -41,7 +41,7 @@ export const CardHoverEffect: React.FC<CardHoverEffectProps> = ({
   return (
     <div
       onMouseMove={onMouseMove}
-      onClick={() => window.open(url, "_blank")}
+      // onClick={() => window.open(url, "_blank")}
       className="group rounded-2xl bg-white dark:bg-zinc-800 border border-gray-200 dark:border-zinc-700 p-8 relative max-w-sm cursor-pointer"
     >
       <Effect {...pattern} mouseX={mouseX} mouseY={mouseY} />

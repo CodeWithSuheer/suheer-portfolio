@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { Link } from "react-router-dom";
 
 export default function NavLinks() {
   let [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
@@ -8,26 +7,26 @@ export default function NavLinks() {
   let links = [
     {
       name: "Home",
-      link: "#home",
+      link: "#",
     },
     {
       name: "Projects",
       link: "#projects",
     },
     {
-      name: "Snippets",
-      link: "#snippets",
-    },
-    {
       name: "About",
       link: "#about",
+    },
+    {
+      name: "Contact",
+      link: "#contact",
     },
   ];
 
   return (
-    <div className="py-1 px-5 flex space-x-4 justify-center border border-gray-200 rounded-2xl shadow-sm">
+    <div className="py-1 px-3 sm:px-5 flex space-x-2 sm:space-x-4 justify-center border border-gray-200 rounded-2xl shadow-sm">
       {links.map((navLink, index) => (
-        <Link key={navLink.name} to={navLink.link}>
+        <a key={navLink.name} href={navLink.link} title={navLink.name}>
           <a
             onMouseEnter={() => setHoveredIndex(index)}
             onMouseLeave={() => setHoveredIndex(null)}
@@ -52,7 +51,7 @@ export default function NavLinks() {
               {navLink.name}
             </span>
           </a>
-        </Link>
+        </a>
       ))}
     </div>
   );

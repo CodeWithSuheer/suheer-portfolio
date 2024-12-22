@@ -1,23 +1,57 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import toast from "react-hot-toast";
+import emailjs, { EmailJSResponseStatus } from "@emailjs/browser";
 
 export default function FreelancerContact() {
   const [email, setEmail] = useState("");
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: any) => {
     e.preventDefault();
-    // Handle email submission
-    console.log("Email submitted:", email);
+
+    if (!email) {
+      toast.error("Please enter your email Address");
+      return;
+    }
+
+    setLoading(true);
+    try {
+      await emailjs.send(
+        "service_6xm8ezx",
+        "template_yj3mw4n",
+        {
+          email: email,
+        },
+        {
+          publicKey: "71BqWuSx0QJ07BuCf",
+        }
+      );
+
+      reset();
+      setLoading(false);
+      toast.success("Got it! I'll get back to you.");
+    } catch (err) {
+      if (err instanceof EmailJSResponseStatus) {
+        console.log("EMAILJS FAILED...", err);
+        return;
+      }
+      setLoading(false);
+      console.log("ERROR", err);
+    }
+  };
+
+  const reset = () => {
     setEmail("");
   };
 
   return (
-    <div className="max-w-2xl mx-auto p-8 bg-[#f8fafc] rounded-lg">
+    <div className="max-w-2xl mx-auto py-6 px-4 sm:px-4 bg-[#f8fafc] rounded-lg">
       <div className="space-y-6">
         <div>
           <h2 className="text-2xl font-bold mb-2">
             Want to hire me as a freelancer? Let&apos;s discuss.
           </h2>
-          <p className="text-gray-600 mb-4">
+          <p className="text-gray-600 mb-4 text-[16px]">
             Drop your message and let&apos;s discuss about your project.
           </p>
           <button
@@ -30,10 +64,10 @@ export default function FreelancerContact() {
         </div>
 
         <div>
-          <p className="text-gray-600 mb-4">
+          <p className="text-gray-600 mb-4 text-[16px]">
             Drop in your email ID and I will get back to you.
           </p>
-          <form onSubmit={handleSubmit} className="flex gap-2">
+          <form onSubmit={handleSubmit} className="flex gap-2 flex-wrap">
             <input
               type="email"
               placeholder="example@gmail.com"
@@ -44,9 +78,12 @@ export default function FreelancerContact() {
             />
             <button
               type="submit"
-              className="bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold py-2 px-4 rounded"
+              // disabled={loading}
+              className={` ${
+                loading ? "cursor-not-allowed" : ""
+              }bg-gray-200 focus:bg-gray-200 text-gray-800 font-semibold w-full sm:w-20 py-2 px-4 rounded`}
             >
-              Send
+              {loading ? <>Sending...</> : <>Send</>}
             </button>
           </form>
         </div>

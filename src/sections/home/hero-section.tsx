@@ -1,4 +1,3 @@
-import TextLabels from "../../components/text-labels";
 import logo from "../../assets/logo/logoV3.png";
 
 const HeroSection = () => {
@@ -12,13 +11,11 @@ const HeroSection = () => {
                 Suheer Zahid 👋
               </h2>
 
-              <p className="mt-4 text-gray-700 text-md leading-relaxed">
-                Senior Software Engineer. I love building things and helping
-                people. Very active on Twitter. Building{" "}
-                <TextLabels text="Coderium" /> other and{" "}
-                <span className="font-semibold cursor-pointer">
-                  cool things
-                </span>
+              <p className="mt-3 sm:mt-4 text-gray-700 text-[16px] leading-relaxed">
+                Senior Software Engineer who's passionate about building tech
+                for good. I create impactful solutions and always work on{" "}
+                <span className="font-semibold">cool ideas</span> that help
+                people.
               </p>
             </div>
           </div>
@@ -26,7 +23,7 @@ const HeroSection = () => {
             <img
               src={logo}
               alt="Logo"
-              className="size-24 rounded-lg object-contain"
+              className="size-20 sm:size-24 rounded-lg object-contain"
             />
           </div>
         </div>

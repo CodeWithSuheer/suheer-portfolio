@@ -17,7 +17,7 @@ export const SkillsSection = () => {
   ];
 
   return (
-    <section className="w-full mt-6 sm:mt-14 px-5 sm:px-0">
+    <section className="w-full mt-6 sm:mt-14">
       <h2 className="text-2xl font-bold text-gray-800 dark:text-white mb-4">
         Skills
       </h2>

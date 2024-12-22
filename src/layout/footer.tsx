@@ -1,25 +1,56 @@
-import { Link } from "react-router-dom";
-
-export default function Footer() {
+const Footer = () => {
   return (
     <>
       <section id="contact">
-        <div className="grid items-center justify-center gap-4 px-4 text-center md:px-6 w-full py-12">
-          <div className="space-y-3">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-              Get in Touch
-            </h2>
-            <p className="mx-auto max-w-lg text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-lg/relaxed">
-              Want to chat? Just shoot me a dm{" "}
-              <Link to="/" className="text-blue-500 hover:underline">
-                with a direct question on twitter
-              </Link>{" "}
-              and I&apos;ll respond whenever I can. I will ignore all
-              soliciting.
-            </p>
+        <div className="grid w-full items-center justify-center gap-4 px-3 py-20 text-center md:px-6">
+          <div>
+            <div className="space-y-3">
+              <h2 className="hero-title title-font mb-4 w-full text-4xl font-bold text-gray-700 lg:text-5xl">
+                Get in Touch
+              </h2>
+              <div className="flex flex-wrap items-center justify-center gap-x-3 overflow-hidden">
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline-offset-4 hover:text-blue-600 hover:underline"
+                  href="https://www.linkedin.com/in/suheer-zahid"
+                >
+                  LinkedIn
+                </a>{" "}
+                |
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline-offset-4 hover:text-blue-600 hover:underline"
+                  href="https://github.com/CodeWithSuheer"
+                >
+                  Github
+                </a>{" "}
+                |
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline-offset-4 hover:text-blue-600 hover:underline"
+                  href="https://codewithsuheer.blogspot.com"
+                >
+                  Blogger
+                </a>{" "}
+                |
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline-offset-4 hover:text-blue-600 hover:underline"
+                  href="https://www.instagram.com/suheerzahid_"
+                >
+                  Instagram
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
     </>
   );
-}
+};
+
+export default Footer;

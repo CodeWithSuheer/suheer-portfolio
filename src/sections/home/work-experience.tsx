@@ -4,7 +4,7 @@ import { SkillsSection } from "../../components/SkillsSection";
 export default function WorkExperience() {
   return (
     <>
-      <section className="w-full mt-6 sm:mt-14 px-5 sm:px-0">
+      <section className="w-full mt-6 sm:mt-14 px-4 sm:px-0">
         <div id="work">
           <h2 className="text-2xl font-bold text-gray-800 dark:text-white mb-6">
             Work Experience
@@ -41,7 +41,7 @@ export default function WorkExperience() {
         </div>
       </section>
 
-      <section className="w-full mt-6 sm:mt-14 px-5 sm:px-0">
+      <section className="w-full mt-6 sm:mt-14 px-4 sm:px-0">
         <SkillsSection />
       </section>
     </>
