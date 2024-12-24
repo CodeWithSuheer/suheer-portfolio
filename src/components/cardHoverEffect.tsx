@@ -5,6 +5,7 @@ import {
   MotionValue,
 } from "framer-motion";
 import { GridPattern } from "./GridPattern";
+import BlurFade from "./ui/blur-fade";
 
 interface CardHoverEffectProps {
   title: string;
@@ -39,22 +40,24 @@ export const CardHoverEffect: React.FC<CardHoverEffectProps> = ({
   }
 
   return (
-    <div
-      onMouseMove={onMouseMove}
-      // onClick={() => window.open(url, "_blank")}
-      className="group rounded-2xl bg-white dark:bg-zinc-800 border border-gray-200 dark:border-zinc-700 p-8 relative max-w-sm cursor-pointer"
-    >
-      <Effect {...pattern} mouseX={mouseX} mouseY={mouseY} />
-      <div className="relative z-10">
-        <span>{icon}</span>
-        <h3 className="mt-6 text-lg font-semibold text-gray-900 tracking-wide leading-6 antialiased dark:text-slate-100">
-          {title}
-        </h3>
-        <p className="mt-2 text-gray-700 text-[15px] leading-6 antialiased dark:text-slate-100">
-          {description}
-        </p>
+    <BlurFade delay={0.4} inView>
+      <div
+        onMouseMove={onMouseMove}
+        // onClick={() => window.open(url, "_blank")}
+        className="group rounded-2xl bg-white dark:bg-zinc-800 border border-gray-200 dark:border-zinc-700 p-8 relative max-w-sm cursor-pointer"
+      >
+        <Effect {...pattern} mouseX={mouseX} mouseY={mouseY} />
+        <div className="relative z-10">
+          <span>{icon}</span>
+          <h3 className="mt-6 text-lg font-semibold text-gray-900 tracking-wide leading-6 antialiased dark:text-slate-100">
+            {title}
+          </h3>
+          <p className="mt-2 text-gray-700 text-[15px] leading-6 antialiased dark:text-slate-100">
+            {description}
+          </p>
+        </div>
       </div>
-    </div>
+    </BlurFade>
   );
 };
 

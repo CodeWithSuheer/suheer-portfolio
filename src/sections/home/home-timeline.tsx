@@ -1,4 +1,6 @@
+import WordPullUp from "@/components/ui/word-pull-up";
 import { TimeLineCard } from "../../components/TimeLineCard";
+import BlurFade from "@/components/ui/blur-fade";
 
 export default function HomeTimeline() {
   const timeLinedata = [
@@ -50,31 +52,39 @@ export default function HomeTimeline() {
         <div>
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2 text-start sm:text-center">
-              <h2 className="text-3xl font-bold sm:text-4xl">
+              <WordPullUp
+                className="text-4xl font-bold tracking-[-0.02em] text-black md:leading-[5rem]"
+                words=" I Love Building Scalable Solutions"
+              />
+              {/* <h2 className="font-bold text-3xl sm:text-4xl">
                 I Love Building Scalable Solutions
-              </h2>
-              <p className="text-[16px] text-gray-700">
-                I’m a passionate MERN Stack Developer with experience building
-                innovative web apps, including e-commerce platforms, POS
-                systems, small-scale tools, and responsive landing pages.
-              </p>
+              </h2> */}
+              <BlurFade delay={0.35} inView>
+                <p className="text-[16px] text-gray-700">
+                  I’m a passionate MERN Stack Developer with experience building
+                  innovative web apps, including e-commerce platforms, POS
+                  systems, small-scale tools, and responsive landing pages.
+                </p>
+              </BlurFade>
             </div>
           </div>
         </div>
         <div>
-          <div className="mb-4 ml-4 divide-y divide-dashed border-l">
-            {timeLinedata.map((project, id) => (
-              <div key={id}>
-                <TimeLineCard
-                  title={project.title}
-                  description={project.description}
-                  dates={project.dates}
-                  image={project.image}
-                  links={project.links}
-                />
-              </div>
-            ))}
-          </div>
+          <BlurFade delay={0.45} inView>
+            <div className="mb-4 ml-4 divide-y divide-dashed border-l">
+              {timeLinedata.map((project, id) => (
+                <div key={id}>
+                  <TimeLineCard
+                    title={project.title}
+                    description={project.description}
+                    dates={project.dates}
+                    image={project.image}
+                    links={project.links}
+                  />
+                </div>
+              ))}
+            </div>
+          </BlurFade>
         </div>
       </div>
     </section>
