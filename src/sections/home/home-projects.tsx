@@ -46,7 +46,7 @@ const projects = [
   {
     title: "Naila Arts",
     dates: "Jan 2024 - Feb 2024",
-    websiteLink: "https://nailaarts.com",
+    websiteLink: "#",
     technologies: [
       "React",
       "JavaScript",

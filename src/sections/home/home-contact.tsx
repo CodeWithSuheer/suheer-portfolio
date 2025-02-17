@@ -51,7 +51,7 @@ export default function FreelancerContact() {
         <div className="space-y-6">
           <div>
             <h2 className="text-2xl font-bold mb-2">
-              Want to hire me as a freelancer? Let&apos;s discuss.
+              Want to hire me? Let&apos;s discuss.
             </h2>
             <p className="text-gray-600 mb-4 text-[16px]">
               Drop your message and let&apos;s discuss about your project.
