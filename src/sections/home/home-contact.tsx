@@ -74,16 +74,16 @@ export default function FreelancerContact() {
                 type="email"
                 placeholder="example@gmail.com"
                 value={email}
+                disabled={loading}
                 onChange={(e) => setEmail(e.target.value)}
                 className="flex-1 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                 required
               />
               <button
                 type="submit"
-                // disabled={loading}
-                className={` ${
-                  loading ? "cursor-not-allowed" : ""
-                }bg-gray-200 focus:bg-gray-200 text-gray-800 font-semibold w-full sm:w-20 py-2 px-4 rounded`}
+                disabled={loading}
+                className={`bg-gray-200 focus:bg-gray-200 text-gray-800 font-semibold w-full sm:w-28 py-2 px-4 rounded 
+                  `}
               >
                 {loading ? <>Sending...</> : <>Send</>}
               </button>

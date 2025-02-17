@@ -39,7 +39,7 @@ export const ResumeCard: React.FC<ResumeCardProps> = ({
     >
       <div className="flex bg-white dark:bg-gray-800">
         <div className="flex-none">
-          <div className="w-12 h-12 rounded-full border bg-gray-200 dark:bg-gray-700 overflow-hidden">
+          <div className="w-12 h-12 p-1 rounded-full border bg-white dark:bg-gray-700 overflow-hidden">
             <img
               src={logoUrl}
               alt={altText}

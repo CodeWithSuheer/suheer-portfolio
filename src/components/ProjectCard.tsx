@@ -15,7 +15,6 @@ interface Props {
 export function ProjectCard({
   title,
   description,
-  dates,
   technologies,
   websiteLink,
   image,
@@ -44,7 +43,7 @@ export function ProjectCard({
         <div className="px-4 pt-2 pb-4">
           <div className="space-y-1">
             <h3 className="text-lg font-semibold">{title}</h3>
-            <p className="text-[12px] text-black font-medium">{dates}</p>
+            {/* <p className="text-[12px] text-black font-medium">{dates}</p> */}
             <p className="text-[13px] text-gray-600">{description}</p>
             <div className="pt-1 pb-1.5 flex justify-start items-center flex-wrap gap-x-2 gap-y-2">
               {technologies?.map((technologies, index) => (

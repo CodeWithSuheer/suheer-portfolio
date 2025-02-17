@@ -3,17 +3,17 @@ export const SkillsSection = () => {
   const skillGroups = [
     "React",
     "Next.js",
+    "Redux Toolkit",
+    "RTK",
     "TypeScript",
     "JavaScript",
     "Tailwind CSS",
+    "Bootstrap",
+    "MUI",
     "Node.js",
-    "Postgres",
     "MongoDB",
     "Jest",
-    "Cypress",
-    "Docker",
     "AWS",
-    "CI/CD",
   ];
 
   return (

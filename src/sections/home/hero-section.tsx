@@ -15,8 +15,8 @@ const HeroSection = () => {
               </BlurFade>
               <BlurFade delay={0.35 * 2} inView>
                 <p className="mt-3 sm:mt-4 text-gray-700 text-[16px] leading-relaxed">
-                  Senior Software Engineer who's passionate about building tech
-                  for good. I create impactful solutions and always work on{" "}
+                  Software Engineer who's passionate about building tech for
+                  good. I create impactful solutions and always work on{" "}
                   <span className="font-semibold">cool ideas</span> that help
                   people.
                 </p>
