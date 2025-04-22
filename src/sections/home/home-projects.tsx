@@ -4,11 +4,12 @@ import { ProjectCard } from "../../components/ProjectCard";
 
 import forYourBeauty from "../../assets/project_img/forYourBeauty.png";
 import brandrsCo from "../../assets/project_img/brandrsCo.png";
-import octaTech from "../../assets/project_img/octaTech.png";
+import accounty from "../../assets/project_img/accounty.png";
 import googly from "../../assets/project_img/googly.png";
 import timezzi from "../../assets/project_img/timezzi.png";
 import palato from "../../assets/project_img/palato.png";
 import naila from "../../assets/project_img/naila.png";
+import angels from "../../assets/project_img/angels.png";
 
 const projects = [
   {
@@ -44,20 +45,34 @@ const projects = [
     image: palato,
   },
   {
-    title: "Naila Arts",
+    title: "Accounty",
     dates: "Jan 2024 - Feb 2024",
-    websiteLink: "#",
+    websiteLink: "https://app.accounty.ch",
     technologies: [
       "React",
       "JavaScript",
-      "Tailwind",
+      "Material UI",
       "Node js",
       "MongoDB",
-      "Redux Toolkit",
+      "RTK",
     ],
-    description:
-      "A POS system for handling sales, inventory, and customer management.",
-    image: naila,
+    description: "An admin dashboard for managing accounts data & tax.",
+    image: accounty,
+  },
+  {
+    title: "Angelsbond",
+    dates: "Jan 2024 - Feb 2024",
+    websiteLink: "https://app.accounty.ch",
+    technologies: [
+      "React",
+      "JavaScript",
+      "Material UI",
+      "Node js",
+      "MongoDB",
+      "RTK",
+    ],
+    description: "A dashboard for building new connections.",
+    image: angels,
   },
   {
     title: "Timezzi",
@@ -74,15 +89,6 @@ const projects = [
     description:
       "An admin dashboard to track tasks, schedules, and team performance.",
     image: timezzi,
-  },
-  {
-    title: "Octa Tech Solutions",
-    dates: "Jan 2024 - Feb 2024",
-    websiteLink: "https://www.octatechsolution.com",
-    technologies: ["React", "JavaScript", "Tailwind CSS", "Redux Toolkit"],
-    description:
-      "A company portfolio website showcasing services and projects.",
-    image: octaTech,
   },
   {
     title: "Brandrs Co",
@@ -108,6 +114,22 @@ const projects = [
     description:
       "An online shopping platform with product listings and order management.",
     image: googly,
+  },
+  {
+    title: "Naila Arts",
+    dates: "Jan 2024 - Feb 2024",
+    websiteLink: "#",
+    technologies: [
+      "React",
+      "JavaScript",
+      "Tailwind",
+      "Node js",
+      "MongoDB",
+      "Redux Toolkit",
+    ],
+    description:
+      "A POS system for handling sales, inventory, and customer management.",
+    image: naila,
   },
 ];
 
@@ -226,24 +248,26 @@ const HomeProjects = () => {
   return (
     <>
       {/* Projects */}
-      <section className="w-full mt-14 px-4 sm:px-0">
-        <h2 className="mb-3 text-2xl font-bold">Projects</h2>
-        <div className="content max-full">
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:gap-4">
-            {projects.map((project, index) => (
-              <ProjectCard
-                key={index}
-                title={project.title}
-                description={project.description}
-                dates={project.dates}
-                technologies={project.technologies}
-                websiteLink={project.websiteLink}
-                image={project.image}
-              />
-            ))}
+      <main className="max-w-2xl mx-auto">
+        <section className="w-full mt-14 px-4 sm:px-0">
+          <h2 className="mb-3 text-2xl font-bold">Projects</h2>
+          <div className="content max-full">
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:gap-4">
+              {projects.map((project, index) => (
+                <ProjectCard
+                  key={index}
+                  title={project.title}
+                  description={project.description}
+                  dates={project.dates}
+                  technologies={project.technologies}
+                  websiteLink={project.websiteLink}
+                  image={project.image}
+                />
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </main>
 
       {/* Upcoming Projects */}
       {/* <section className="w-full mt-10 px-4 sm:px-0">
