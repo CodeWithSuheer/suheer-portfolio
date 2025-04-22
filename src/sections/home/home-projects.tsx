@@ -62,7 +62,7 @@ const projects = [
   {
     title: "Angelsbond",
     dates: "Jan 2024 - Feb 2024",
-    websiteLink: "https://app.accounty.ch",
+    websiteLink: "https://www.angelsbond.com",
     technologies: [
       "React",
       "JavaScript",
